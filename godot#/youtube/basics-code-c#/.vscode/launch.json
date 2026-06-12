@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Godot Run",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "A:/Progetti/Archivio DEVGAME/Godot/engin/c#/Godot_v4.6.3-stable_mono_win64/Godot_v4.6.3-stable_mono_win64/Godot_v4.6.3-stable_mono_win64.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "args": [
+        "--path",
+        "${workspaceRoot}"
+      ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "a:/Progetti/Archivio DEVGAME/Godot/git/learan godot/godot#/youtube/setup",
+      "program": "a:/Progetti/Archivio DEVGAME/Godot/git/learan godot/godot#/youtube/setup/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
