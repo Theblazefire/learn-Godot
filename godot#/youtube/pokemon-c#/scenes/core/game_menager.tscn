@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4cph7vcd7qsn"]
 
-[ext_resource type="Texture2D" uid="uid://d017ux7hxmaxw" path="res://icon.svg" id="1_opeba"]
+[ext_resource type="PackedScene" uid="uid://vbiisu1345er" path="res://scenes/levels/level.tscn" id="1_6r3eo"]
 
 [node name="GameMenager" type="Node" unique_id=1247885917]
 
@@ -28,6 +28,5 @@ size_2d_override = Vector2i(1152, 648)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/SubViewportContainer/SubViewport" unique_id=920974497]
-position = Vector2(87, 76)
-texture = ExtResource("1_opeba")
+[node name="Level" parent="Control/SubViewportContainer/SubViewport" unique_id=261153838 instance=ExtResource("1_6r3eo")]
+position = Vector2(200, 128)
