@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 public partial class CharacterMovement : Node
 {
-	[Signal] public delegate void AnimationEventHandler();
+	[Signal] public delegate void AnimationEventHandler(string AnimationType);
 	[ExportCategory("Nodes")]
 	[Export] public Node2D Character;
 	[Export] public CharacterInput characterInput;
@@ -17,12 +17,15 @@ public partial class CharacterMovement : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		characterInput.Walk += StartWalking;
+		characterInput.Turn += Turn;
 		Game.Core.Logger.Info("Loading movement component ...");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		Walk(delta);
 	}
 
 	public bool IsMoving()
@@ -33,15 +36,12 @@ public partial class CharacterMovement : Node
 	{
 		if (!IsMoving())
 		{
-			// Wolking animation
+			EmitSignal(SignalName.Animation, "walk");
 			TarghetPosition= Character.Position + characterInput.Direction * Global.Instance.GRIDE_SIZE;
 			Game.Core.Logger.Info($"Moving from {Character.Position} to {TarghetPosition}");
 			IsWalking= true;
 		}
-		else
-		{
-			//idle position
-		}
+		
 	}
 
 	public void Walk(double delta)
@@ -56,7 +56,7 @@ public partial class CharacterMovement : Node
 		}
 		else
 		{
-			// idle animation
+			EmitSignal(SignalName.Animation, "idle");
 		}
 	}
 	public void StopWalking()
@@ -64,7 +64,12 @@ public partial class CharacterMovement : Node
 		IsWalking=false;
 		SnapPositionToGrid();
 	}
-	
+
+	public void Turn()
+	{
+		EmitSignal(SignalName.Animation, "turn");
+	}
+
 	public void SnapPositionToGrid()
 	{
 		Character.Position= new Vector2(

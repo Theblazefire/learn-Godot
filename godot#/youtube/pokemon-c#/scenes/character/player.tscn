@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b3ti6hwbm2uhm" path="res://script/gameplay/characters/PlayerInput.cs" id="1_tum32"]
 [ext_resource type="Texture2D" uid="uid://f37lth13kdtd" path="res://asset/character/kalos_breeder__m__by_aveontrainer_dgvw9yk.png" id="1_vt0b6"]
 [ext_resource type="Script" uid="uid://cejv36xbnn1x0" path="res://script/gameplay/characters/CharacterMovement.cs" id="2_0vjlc"]
+[ext_resource type="Script" uid="uid://b4gwdsv7imtxu" path="res://script/gameplay/characters/CharacterAnimation.cs" id="4_bnvp8"]
+[ext_resource type="Script" uid="uid://wur3px4xqtef" path="res://scenes/utiliy/StaticMachin.cs" id="5_1y732"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tum32"]
 
@@ -285,6 +287,7 @@ position = Vector2(10, 6)
 scale = Vector2(0.625, 0.5833333)
 sprite_frames = SubResource("SpriteFrames_k0yad")
 animation = &"idle_down"
+script = ExtResource("4_bnvp8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=584457005]
 position = Vector2(8, 8)
@@ -295,6 +298,8 @@ position_smoothing_enabled = true
 position = Vector2(10, 10)
 target_position = Vector2(0, 16)
 
-[node name="StaticMachin" type="Node" parent="." unique_id=1422616027]
+[node name="StaticMachin" type="Node" parent="." unique_id=1422616027 node_paths=PackedStringArray("customer")]
+script = ExtResource("5_1y732")
+customer = NodePath("..")
 
 [node name="Roam" type="Node" parent="StaticMachin" unique_id=2018473425]
