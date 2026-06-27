@@ -131,7 +131,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5y66v")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Turn_down",
 "speed": 5.0
 }, {
@@ -142,7 +142,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g2qfr")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Turn_left",
 "speed": 5.0
 }, {
@@ -153,7 +153,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iinkm")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Turn_right",
 "speed": 5.0
 }, {
@@ -164,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7r6u0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Turn_up",
 "speed": 5.0
 }, {
@@ -181,7 +181,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ux0ro")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk_down",
 "speed": 5.0
 }, {
@@ -198,7 +198,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pygui")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk_left",
 "speed": 5.0
 }, {
@@ -215,7 +215,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o0173")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk_right",
 "speed": 5.0
 }, {
@@ -232,7 +232,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2w14l")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk_up",
 "speed": 5.0
 }, {
@@ -240,7 +240,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0vjlc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_down",
 "speed": 5.0
 }, {
@@ -248,7 +248,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bnvp8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_left",
 "speed": 5.0
 }, {
@@ -256,7 +256,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1y732")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_right",
 "speed": 5.0
 }, {
@@ -264,7 +264,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_erpy8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_up",
 "speed": 5.0
 }]
@@ -290,7 +290,8 @@ texture_filter = 1
 position = Vector2(10, 6)
 scale = Vector2(0.625, 0.5833333)
 sprite_frames = SubResource("SpriteFrames_k0yad")
-animation = &"idle_down"
+animation = &"Walk_left"
+frame_progress = 0.31042236
 script = ExtResource("4_bnvp8")
 characterInput = NodePath("../input")
 characterMovement = NodePath("../movement")

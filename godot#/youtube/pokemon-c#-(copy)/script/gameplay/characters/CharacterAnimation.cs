@@ -16,7 +16,7 @@ namespace Game.Gameplay
         public override void _Ready()
         {
             characterMovement.Animation += PlayAnimation;
-            Game.Core.Logger.Info("CIAO RALPH! Le animazioni sono pronte!");
+            Game.Core.Logger.Info("Le animazioni sono pronte!");
         }
 
         public void PlayAnimation(string AnimationType)
@@ -50,7 +50,7 @@ namespace Game.Gameplay
                     break;
             }
 
-            if (previousAnimation != CurrentAnimation)
+            if (previousAnimation != CurrentAnimation|| AnimationType.ToLower() == "walk")
             {
                 // Ora stamperà il nome vero dell'animazione!
                 Game.Core.Logger.Info($"Playing animation: {CurrentAnimation}");

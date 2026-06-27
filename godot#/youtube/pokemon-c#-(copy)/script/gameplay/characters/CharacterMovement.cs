@@ -49,16 +49,18 @@ public partial class CharacterMovement : Node
 	{
 		if (IsWalking)
 		{
-			Character.Position = Character.Position.MoveToward(TarghetPosition, (float)delta * Global.Instance.GRIDE_SIZE * 4);
+			Character.Position = Character.Position.MoveToward(
+				TarghetPosition, (float)delta * Global.Instance.GRIDE_SIZE * 4);
 			if(Character.Position.DistanceTo(TarghetPosition)< 1f)
 			{
 				StopWalking();
+				EmitSignal(SignalName.Animation, "idle");
 			}
 		}
-		else
+		/*else
 		{
 			EmitSignal(SignalName.Animation, "idle");
-		}
+		}*/
 	}
 	public void StopWalking()
 	{
